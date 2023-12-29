@@ -7,7 +7,8 @@ This project is based on TCP for image Base64 encoding and decoding. It performs
 这个项目基于TCP进行图像的Base64编码和解码。它在上位机上执行原生AI处理，而下位机则基于AI反馈数据进行控制。目前，上位机运行Yolo，下位机运行OpenHarmony Car Linux内核
 可以基于次进行其他项目的拓展和开发
 ## Icon
-
-
-
 ![](https://azure-home.oss-cn-shenzhen.aliyuncs.com/img/icon.png)
+
+## 分支描述
+这个是运行在linux_kerenal上的分支主要功能是进行本地图片的base64编码以及进行tcp发送  这是一个tcp_client
+
