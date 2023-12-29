@@ -1,3 +1,0 @@
-D:/realworspace/AzureWave/TcpServerANDBase64Decoder/cmake-build-debug/CMakeFiles/upgradeOHOS.dir
-D:/realworspace/AzureWave/TcpServerANDBase64Decoder/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/realworspace/AzureWave/TcpServerANDBase64Decoder/cmake-build-debug/CMakeFiles/rebuild_cache.dir
