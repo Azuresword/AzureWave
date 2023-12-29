@@ -10,4 +10,4 @@ This project is based on TCP for image Base64 encoding and decoding. It performs
 
 
 
-![](https://azure-home.oss-cn-shenzhen.aliyuncs.com/img/icon2_round.png)
+<img src="https://azure-home.oss-cn-shenzhen.aliyuncs.com/img/icon2_round.png" style="zoom: 33%;" />
