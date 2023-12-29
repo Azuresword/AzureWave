@@ -10,4 +10,4 @@ This project is based on TCP for image Base64 encoding and decoding. It performs
 
 
 
-![](https://azure-home.oss-cn-shenzhen.aliyuncs.com/img/DALL·E 2023-12-29 12.36.57 - A modern and sleek logo for 'AzureWave'%2C a technology project involving AI and TCP-based image processing. The logo should symbolize AI%2C connectivity%2C.png)
+![](https://azure-home.oss-cn-shenzhen.aliyuncs.com/img/icon.png)
