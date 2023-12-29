@@ -1,3 +1,0 @@
-/home/fsr/ws/realworkspace/AzureWave/base64_encoder/cmake-build-debug/CMakeFiles/base64_encoder.dir
-/home/fsr/ws/realworkspace/AzureWave/base64_encoder/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/fsr/ws/realworkspace/AzureWave/base64_encoder/cmake-build-debug/CMakeFiles/rebuild_cache.dir

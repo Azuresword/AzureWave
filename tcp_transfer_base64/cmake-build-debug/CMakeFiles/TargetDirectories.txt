@@ -1,0 +1,3 @@
+/home/fsr/ws/realworkspace/AzureWave/tcp_transfer_base64/cmake-build-debug/CMakeFiles/tcp_transfer_base64.dir
+/home/fsr/ws/realworkspace/AzureWave/tcp_transfer_base64/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/fsr/ws/realworkspace/AzureWave/tcp_transfer_base64/cmake-build-debug/CMakeFiles/rebuild_cache.dir
