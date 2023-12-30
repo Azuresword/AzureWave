@@ -10,7 +10,7 @@
  * @brief Encoder_and_transfer,传输函数类
  */
 
-Encoder_and_transfer::Encoder_and_transfer() : running(false) {}
+Encoder_and_transfer::Encoder_and_transfer(std::mutex& photo_Mutex) : running(false) {}
 
 Encoder_and_transfer::~Encoder_and_transfer() {
     if (thread.joinable()) {
@@ -39,6 +39,7 @@ void Encoder_and_transfer::run() {
     bool transferCompleted = false;
 
     while (!transferCompleted) {
+
         // 创建套接字
         sock = socket(AF_INET, SOCK_STREAM, 0);
         if (sock == -1) {
@@ -78,6 +79,7 @@ void Encoder_and_transfer::run() {
         std::stringstream ss;
         int bytesReceived = recv(sock, response, 1024, 0);
         if (bytesReceived <= 0) {
+
             std::cerr << "Receive failed or connection closed" << std::endl;
             close(sock);
             break;
@@ -130,37 +132,32 @@ void USB_CAM::run() {
     struct _v4l2_video video;
     fd_set fds;
     struct timeval tv;
-
-    video.fd = open_video_device("/dev/video0");
-    if (video.fd < 0)
-    {
-
-    }
-
-    ret = query_video_device_cap(&video);
-    if (ret < 0)
-    {
-        goto __exit;
-    }
-
-    ret = set_video_device_par(&video);
-    if (ret < 0)
-    {
-        goto __exit;
-    }
-
-    ret = set_video_device_mmap(&video);
-    if (ret < 0)
-    {
-        goto __exit;
-    }
-
-    ret = set_video_device_stream_on(&video);
-    if (ret < 0)
-    {
-        goto __exit;
-    }
     while (true) {
+        video.fd = open_video_device("/dev/video0");
+        if (video.fd < 0) {
+
+        }
+
+        ret = query_video_device_cap(&video);
+        if (ret < 0) {
+            goto __exit;
+        }
+
+        ret = set_video_device_par(&video);
+        if (ret < 0) {
+            goto __exit;
+        }
+
+        ret = set_video_device_mmap(&video);
+        if (ret < 0) {
+            goto __exit;
+        }
+
+        ret = set_video_device_stream_on(&video);
+        if (ret < 0) {
+            goto __exit;
+        }
+
         for (i = 0; i < 5; i++) {/* 采集5张(帧)图片 */
             FD_ZERO(&fds);
             FD_SET(video.fd, &fds);
@@ -180,7 +177,7 @@ void USB_CAM::run() {
             if (ret < 0) {
                 goto __exit;
             }
-            sprintf(buf, "../mypic/image%d.jpg", i);
+            sprintf(buf, "./image%d.jpg", i);
             fp = fopen(buf, "wb");    /* 保存为图片文件 */
             if (fp == NULL) {
                 perror("open image file failed\n");
@@ -191,11 +188,11 @@ void USB_CAM::run() {
             fclose(fp);
             set_video_device_stream_queue(&video, index);
             usleep(1000);
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
+        __exit:
+        set_video_device_stream_off(&video);
+        close_video_device(&video);
     }
-    __exit:
-    set_video_device_stream_off(&video);
-    close_video_device(&video);
-
 }
 

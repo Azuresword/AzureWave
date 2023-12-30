@@ -21,14 +21,14 @@
 #include <math.h>
 #include <errno.h>
 #include <assert.h>
-
+#include <mutex>
 /**
  * @brief Encoder_and_transfer,传输函数类
  */
 
 class Encoder_and_transfer {
 public:
-    Encoder_and_transfer();
+    Encoder_and_transfer(std::mutex& photo_mutex);
     ~Encoder_and_transfer();
 
     void start();
@@ -36,6 +36,7 @@ public:
     bool isRunning() const;
 
 private:
+
     void run();
     std::thread thread;
     bool running;
@@ -54,7 +55,12 @@ public:
     void join();
     bool isRunning() const;
 
+    std::mutex& getMutex(){
+        return photo_mutex;
+    }
+
 private:
+    std::mutex photo_mutex;
     void run();
     std::thread thread;
     bool running;
