@@ -6,7 +6,21 @@
 #define THREAD_TEST_THREAD_H
 
 #include <thread>
-
+#include <linux/videodev2.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <sys/mman.h>
+#include <linux/types.h>
+#include <malloc.h>
+#include <math.h>
+#include <errno.h>
+#include <assert.h>
 
 /**
  * @brief Encoder_and_transfer,传输函数类

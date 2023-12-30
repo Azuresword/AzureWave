@@ -1,10 +1,15 @@
 # ninja log v5
-0	19	1703955901529006521	build.ninja	8656f0bdcb0efc95
-518	562	1703955590308544030	tcp_USB_cam	6167bb3463c7cfe2
-1	518	1703955590264544933	CMakeFiles/tcp_USB_cam.dir/usrpthread.cpp.o	44e5da2a2abb6e49
-1	373	1703955590104548215	CMakeFiles/tcp_USB_cam.dir/main.cpp.o	9913701b1f0d9bb1
-1	448	1703836923026442977	CMakeFiles/tcp_USB_cam.dir/Base64_encoder.cpp.o	afd5ea2452da7543
-1	336	1703955904844993846	CMakeFiles/tcp_USB_cam.dir/Base64_encoder.cpp.o	5d19f12c621a9ba6
-0	342	1703955904852993816	CMakeFiles/tcp_USB_cam.dir/main.cpp.o	869e9e2172d8c9da
-1	502	1703955905012993214	CMakeFiles/tcp_USB_cam.dir/usrpthread.cpp.o	125926233c1c7424
+0	19	1703956690697626979	build.ninja	8656f0bdcb0efc95
 502	547	1703955905052993064	tcp_USB_cam	6167bb3463c7cfe2
+1	502	1703955905012993214	CMakeFiles/tcp_USB_cam.dir/usrpthread.cpp.o	125926233c1c7424
+0	342	1703955904852993816	CMakeFiles/tcp_USB_cam.dir/main.cpp.o	869e9e2172d8c9da
+1	336	1703955904844993846	CMakeFiles/tcp_USB_cam.dir/Base64_encoder.cpp.o	5d19f12c621a9ba6
+1	169	1703957027781964333	CMakeFiles/tcp_USB_cam.dir/camera.cpp.o	fcfbf5807fade4a0
+1	689	1703957028301971500	CMakeFiles/tcp_USB_cam.dir/usrpthread.cpp.o	125926233c1c7424
+689	748	1703957028357972271	tcp_USB_cam	ae7a52190c705cb1
+1	314	1703957329524042740	CMakeFiles/tcp_USB_cam.dir/main.cpp.o	869e9e2172d8c9da
+1	567	1703957329776021994	CMakeFiles/tcp_USB_cam.dir/usrpthread.cpp.o	125926233c1c7424
+567	617	1703957329828017714	tcp_USB_cam	ae7a52190c705cb1
+0	429	1703957372260667203	CMakeFiles/tcp_USB_cam.dir/main.cpp.o	869e9e2172d8c9da
+1	584	1703957372416655395	CMakeFiles/tcp_USB_cam.dir/usrpthread.cpp.o	125926233c1c7424
+584	629	1703957372460652065	tcp_USB_cam	ae7a52190c705cb1

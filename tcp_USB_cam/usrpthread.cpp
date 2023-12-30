@@ -4,6 +4,7 @@
 
 #include "usrpthread.h"
 #include "Base64_encoder.h"
+#include "camera.h"
 #include <iostream>
 /**
  * @brief Encoder_and_transfer,传输函数类
@@ -89,6 +90,112 @@ void Encoder_and_transfer::run() {
 
         close(sock); // 关闭当前套接字
     }
+
+}
+
+/**
+ * 摄像头功能类  USB_CAM
+ */
+
+
+USB_CAM::USB_CAM():running(false) {}
+
+USB_CAM::~USB_CAM() {
+    if (thread.joinable()) {
+        thread.join();
+    }
+}
+
+void USB_CAM::start() {
+    running = true;
+    thread = std::thread(&USB_CAM::run, this);
+}
+
+void USB_CAM::join() {
+    if (thread.joinable()) {
+        thread.join();
+    }
+}
+
+bool USB_CAM::isRunning() const {
+    return running;
+}
+
+void USB_CAM::run() {
+    FILE *fp = NULL;
+    int index = 0;
+    int ret = 0;
+    int i = 0;
+    char buf[16] = {0};
+    struct _v4l2_video video;
+    fd_set fds;
+    struct timeval tv;
+
+    video.fd = open_video_device("/dev/video0");
+    if (video.fd < 0)
+    {
+
+    }
+
+    ret = query_video_device_cap(&video);
+    if (ret < 0)
+    {
+        goto __exit;
+    }
+
+    ret = set_video_device_par(&video);
+    if (ret < 0)
+    {
+        goto __exit;
+    }
+
+    ret = set_video_device_mmap(&video);
+    if (ret < 0)
+    {
+        goto __exit;
+    }
+
+    ret = set_video_device_stream_on(&video);
+    if (ret < 0)
+    {
+        goto __exit;
+    }
+    while (true) {
+        for (i = 0; i < 5; i++) {/* 采集5张(帧)图片 */
+            FD_ZERO(&fds);
+            FD_SET(video.fd, &fds);
+
+            tv.tv_sec = 5;    /* wait time */
+            tv.tv_usec = 0;
+            ret = select(video.fd + 1, &fds, NULL, NULL, &tv);
+
+            if (ret < 0) {
+                perror("select error");
+                goto __exit;
+            } else if (ret == 0) {
+                printf("select timeout\n");
+                goto __exit;
+            }
+            ret = read_video_device_stream_frame(&video, &index);
+            if (ret < 0) {
+                goto __exit;
+            }
+            sprintf(buf, "../mypic/image%d.jpg", i);
+            fp = fopen(buf, "wb");    /* 保存为图片文件 */
+            if (fp == NULL) {
+                perror("open image file failed\n");
+                goto __exit;
+            }
+            printf("save %s \n", buf);
+            fwrite(video.mmap_buf[index].addr, video.mmap_buf[index].size, 1, fp);
+            fclose(fp);
+            set_video_device_stream_queue(&video, index);
+            usleep(1000);
+        }
+    }
+    __exit:
+    set_video_device_stream_off(&video);
+    close_video_device(&video);
 
 }
 
