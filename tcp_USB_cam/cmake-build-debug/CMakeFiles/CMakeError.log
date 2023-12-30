@@ -1,11 +1,11 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/fsr/ws/realworkspace/AzureWave/tcp_USB_cam/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/fsr/ws/realworkspace/dylan_github/azurewave/tcp_USB_cam/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/home/fsr/下载/clion-2022.3.3/bin/ninja/linux/x64/ninja cmTC_0b16d && [1/2] Building C object CMakeFiles/cmTC_0b16d.dir/src.c.o
-[2/2] Linking C executable cmTC_0b16d
-FAILED: cmTC_0b16d 
-: && /usr/bin/cc   CMakeFiles/cmTC_0b16d.dir/src.c.o -o cmTC_0b16d   && :
-/usr/bin/ld: CMakeFiles/cmTC_0b16d.dir/src.c.o: in function `main':
+Run Build Command(s):/home/fsr/下载/clion-2022.3.3/bin/ninja/linux/x64/ninja cmTC_e9fcc && [1/2] Building C object CMakeFiles/cmTC_e9fcc.dir/src.c.o
+[2/2] Linking C executable cmTC_e9fcc
+FAILED: cmTC_e9fcc 
+: && /usr/bin/cc   CMakeFiles/cmTC_e9fcc.dir/src.c.o -o cmTC_e9fcc   && :
+/usr/bin/ld: CMakeFiles/cmTC_e9fcc.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
@@ -36,12 +36,12 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/fsr/ws/realworkspace/AzureWave/tcp_USB_cam/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/fsr/ws/realworkspace/dylan_github/azurewave/tcp_USB_cam/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/home/fsr/下载/clion-2022.3.3/bin/ninja/linux/x64/ninja cmTC_6f40f && [1/2] Building C object CMakeFiles/cmTC_6f40f.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_6f40f
-FAILED: cmTC_6f40f 
-: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_6f40f.dir/CheckFunctionExists.c.o -o cmTC_6f40f  -lpthreads && :
+Run Build Command(s):/home/fsr/下载/clion-2022.3.3/bin/ninja/linux/x64/ninja cmTC_df53d && [1/2] Building C object CMakeFiles/cmTC_df53d.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_df53d
+FAILED: cmTC_df53d 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_df53d.dir/CheckFunctionExists.c.o -o cmTC_df53d  -lpthreads && :
 /usr/bin/ld: 找不到 -lpthreads
 collect2: error: ld returned 1 exit status
 ninja: build stopped: subcommand failed.

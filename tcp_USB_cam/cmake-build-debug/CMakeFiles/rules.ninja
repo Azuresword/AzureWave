@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/fsr/下载/clion-2022.3.3/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/fsr/ws/realworkspace/AzureWave/tcp_USB_cam -B/home/fsr/ws/realworkspace/AzureWave/tcp_USB_cam/cmake-build-debug
+  command = /home/fsr/下载/clion-2022.3.3/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/fsr/ws/realworkspace/dylan_github/azurewave/tcp_USB_cam -B/home/fsr/ws/realworkspace/dylan_github/azurewave/tcp_USB_cam/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

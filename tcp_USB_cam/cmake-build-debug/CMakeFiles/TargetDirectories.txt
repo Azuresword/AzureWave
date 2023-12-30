@@ -1,3 +1,3 @@
-/home/fsr/ws/realworkspace/AzureWave/tcp_USB_cam/cmake-build-debug/CMakeFiles/tcp_USB_cam.dir
-/home/fsr/ws/realworkspace/AzureWave/tcp_USB_cam/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/fsr/ws/realworkspace/AzureWave/tcp_USB_cam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/fsr/ws/realworkspace/dylan_github/azurewave/tcp_USB_cam/cmake-build-debug/CMakeFiles/tcp_USB_cam.dir
+/home/fsr/ws/realworkspace/dylan_github/azurewave/tcp_USB_cam/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/fsr/ws/realworkspace/dylan_github/azurewave/tcp_USB_cam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
