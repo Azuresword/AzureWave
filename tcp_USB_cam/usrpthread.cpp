@@ -5,6 +5,7 @@
 #include "usrpthread.h"
 #include "Base64_encoder.h"
 #include "camera.h"
+#include "TCP_recv_send.h"
 #include <iostream>
 /**
  * @brief Encoder_and_transfer,传输函数类
@@ -34,10 +35,14 @@ bool Encoder_and_transfer::isRunning() const {
 }
 
 void Encoder_and_transfer::run() {
+    //12600端口的数据
     int sock;
     struct sockaddr_in server;
     bool transferCompleted = false;
-
+    //12700端口的数据
+    const char* server_ip = "192.168.50.34";
+    std::string message = "ok";
+    int num_iterations = 1; // 这里假设循环5次
     while (!transferCompleted) {
 
         // 创建套接字
@@ -87,10 +92,11 @@ void Encoder_and_transfer::run() {
 
         ss << response;
         if (ss.str().find("START") == std::string::npos) {
+
             transferCompleted = true;
         }
-
         close(sock); // 关闭当前套接字
+        send_and_receive(server_ip, 12700, message, num_iterations);
     }
 
 }

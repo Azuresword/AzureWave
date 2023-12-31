@@ -188,7 +188,7 @@ int set_video_device_stream_queue(struct _v4l2_video *pdevice, int index)
         perror("ioctl call \'VIDIOC_QBUF\' failed");
         return -1;
     }
-
+    return 0;
 }
 
 int set_video_device_stream_on(struct _v4l2_video *pdevice)
