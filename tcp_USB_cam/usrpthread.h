@@ -60,6 +60,7 @@ public:
     }
 
 private:
+    std::mutex check_working;
     std::mutex photo_mutex;
     void run();
     std::thread thread;

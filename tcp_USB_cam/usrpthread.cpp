@@ -47,9 +47,9 @@ void Encoder_and_transfer::run() {
             //return 1;
         }
 
-        server.sin_addr.s_addr = inet_addr("192.168.50.218");
+        server.sin_addr.s_addr = inet_addr("192.168.50.34");
         server.sin_family = AF_INET;
-        server.sin_port = htons(8888);
+        server.sin_port = htons(12600);
 
         // 连接到服务器
         if (connect(sock, (struct sockaddr *)&server, sizeof(server)) < 0) {
